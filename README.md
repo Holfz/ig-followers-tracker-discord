@@ -31,6 +31,9 @@ run `pip install -r requirements.txt` first.
 3. Type a command `.adduser yourinstagramusername` for adding username to database for tracking
 4. Bot will track your followers and sent it to channel every 11:30 PM
 
+## Not working list
+1. Schedule on 11:30PM is not working right now (using .check for this time)
+
 ## Disclaimer
 **This project using for practice my Python language experience**
 If you help me improve my code please make a pull request with edited code in it (Add description explaining will much help)
@@ -38,6 +41,7 @@ If you help me improve my code please make a pull request with edited code in it
 **Don't pull request or make issues like your code is f__king s_it because i know and as a tell you it is my FIRST experience with Python**
 
 **You can help me fix README typo too. Sorry for that typo i know it bad**
+
 
 ## License
 This project is licensed under the [MIT License](https://github.com/Holfz/ig-followers-tracker-discord/blob/master/LICENSE).
