@@ -37,5 +37,5 @@ If you help me improve my code please make a pull request with edited code in it
 
 **You can help me fix README typo too. Sorry for that typo i know it bad**
 
-## License
+### License
 This project is licensed under the [MIT License](https://github.com/Holfz/ig-followers-tracker-discord/blob/master/LICENSE).
