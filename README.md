@@ -1,5 +1,5 @@
 # ig-followers-tracker-discord
-![](https://i.imgur.com/FkXsr2E.png)
+![description](https://i.imgur.com/FkXsr2E.png)
 A Discord Bot for tracking instagram followers and send summary to discord channels
 
 ## Setup
