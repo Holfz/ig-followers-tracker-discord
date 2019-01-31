@@ -5,6 +5,8 @@ A Discord Bot for tracking instagram followers and send summary to discord chann
 
 ## Setup
 
+run `pip install -r requirements.txt` first.
+
 ### Instagram Setup
 
  1. Login to [Instagram](https://www.instagram.com/) Using firefox.
