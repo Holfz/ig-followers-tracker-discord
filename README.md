@@ -29,7 +29,7 @@ A Discord Bot for tracking instagram followers and send summary to discord chann
 3. Type a command `.adduser yourinstagramusername` for adding username to database for tracking
 4. Bot will track your followers and sent it to channel every 11:30 PM
 
-### Disclaimer
+## Disclaimer
 **This project using for practice my Python language experience**
 If you help me improve my code please make a pull request with edited code in it (Add description explaining will much help)
 
@@ -37,5 +37,5 @@ If you help me improve my code please make a pull request with edited code in it
 
 **You can help me fix README typo too. Sorry for that typo i know it bad**
 
-### License
+## License
 This project is licensed under the [MIT License](https://github.com/Holfz/ig-followers-tracker-discord/blob/master/LICENSE).
