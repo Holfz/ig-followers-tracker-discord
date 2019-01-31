@@ -98,6 +98,12 @@ async def adduser(ctx, arg):
             colour = 0xECB4D3
         )
         await client.say(embed=embed)
+
+@client.command(pass_context=True)
+async def check(ctx):
+    print(str(ctx.message.author) + " issued a command check")
+    await checkfollowers()
+
         
 async def checkfollowers():
     today = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -114,7 +120,9 @@ async def checkfollowers():
             val = (follower.username, str(follower.userid), str(profile.userid), today)
             cursor.execute(sql, val)
             db.commit()
-        calculatefollower(result[2],result[4],profile)
+        await calculatefollower(result[2],result[4],profile)
+
+
 
 #calculatefollower(userid,channelid):
 async def calculatefollower(userid,channelid,profile):
@@ -140,7 +148,8 @@ async def calculatefollower(userid,channelid,profile):
     #ถ้ามีวันนี้ แสดงว่าพึ่งฟอล
     follow = []
     unfollow = []
-    differences = diff(followers_list_yesterday, followers_list_today)
+    differences = diff(followers_list_today, followers_list_yesterday)
+    print(differences)
     for difference in differences:
         if (difference in followers_list_today):
             sql = "SELECT * FROM followers WHERE userid = %s ORDER BY id LIMIT 1"
@@ -168,7 +177,7 @@ async def calculatefollower(userid,channelid,profile):
         if(index == 1):
             unfollowemb = i
         else:
-            unfollowemb = "\n" + i
+            unfollowemb += "\n" + i
     if (index == 0):
         unfollowemb = "-"
     index = 0
@@ -177,7 +186,7 @@ async def calculatefollower(userid,channelid,profile):
         if(index == 1):
             followemb = i
         else:
-            followemb = "\n" + i
+            followemb += "\n" + i
     if (index == 0):
         followemb = "-"
 
@@ -185,6 +194,10 @@ async def calculatefollower(userid,channelid,profile):
         title = "Your Instagram Daily Summary",
         colour = 0xBCF4E4
     )
+    print(follow)
+    print(unfollow)
+    print(followemb)
+    print(unfollowemb)
     embed.add_field(name="Username", value=profile.username, inline=True)
     embed.add_field(name="Userid", value=str(profile.userid), inline=True)
     embed.add_field(name="Your Follower Count Yesterday", value=str(len(followers_list_yesterday)), inline=False)
@@ -193,7 +206,5 @@ async def calculatefollower(userid,channelid,profile):
     embed.add_field(name="Who Follow You Today", value=followemb, inline=True)
     embed.set_thumbnail(url=profile.profile_pic_url)
     await client.send_message(discord.Object(id=str(channelid)), embed=embed)
-	
-schedule.every().day.at("23:30").do(checkfollowers)
 
 client.run('token')
